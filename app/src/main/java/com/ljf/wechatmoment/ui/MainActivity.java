@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onRefresh() {
                 mCurrentPage = 1;
                 mNeedClear = true;
+                mCanLoadMore = true;
                 mRepository.getTweets(mCurrentPage);
             }
         });
