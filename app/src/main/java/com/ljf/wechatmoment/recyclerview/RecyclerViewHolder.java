@@ -22,7 +22,6 @@
 
 package com.ljf.wechatmoment.recyclerview;
 
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
@@ -76,9 +75,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void setImageView(int id, String url) {
         ImageView imageView = get(id);
-        Picasso.Builder builder = new Picasso.Builder(mRootView.getContext())
-                .loggingEnabled(true);
-        builder.build().load(url).into(imageView);
+        Picasso.get().load(url).into(imageView);
     }
 
 }

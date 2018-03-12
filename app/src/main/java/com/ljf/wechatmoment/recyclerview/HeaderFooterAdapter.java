@@ -77,6 +77,21 @@ public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         return mTypePool.getProviderByClass(clazz);
     }
 
+    public void clearDatas() {
+        int startIndex = 0;
+        int endIndex = mItems.size();
+        if (hasHeader) {
+            startIndex++;
+        }
+        if (hasFooter) {
+            endIndex--;
+        }
+        for (int i = endIndex - 1; i >= startIndex; i--) {
+            mItems.remove(i);
+        }
+        notifyDataSetChanged();
+    }
+
     public void addDatas(List<?> items) {
         if (hasFooter) {
             mItems.addAll(mItems.size() - 1, items);

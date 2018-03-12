@@ -17,6 +17,7 @@ import com.ljf.wechatmoment.data.Repository;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class SplashActivity extends Activity {
     private TextView mStatusTv;
@@ -29,7 +30,7 @@ public class SplashActivity extends Activity {
         mStatusTv = (TextView) findViewById(R.id.tv_status);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         EventBus.getDefault().register(this);
-        Repository.getInstance(this).loadTweets();
+        Repository.getInstance().loadTweets();
     }
 
     @Override
@@ -38,12 +39,13 @@ public class SplashActivity extends Activity {
         EventBus.getDefault().unregister(this);
     }
 
-    @Subscribe
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onLoadTweetComplete(LoadCompleteMessage message) {
         startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
-    @Subscribe
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onLoadError(ErrorMessage message) {
         Toast.makeText(this, message.getContent(), Toast.LENGTH_SHORT).show();
         mStatusTv.setText("网络异常，数据未能成功加载");
