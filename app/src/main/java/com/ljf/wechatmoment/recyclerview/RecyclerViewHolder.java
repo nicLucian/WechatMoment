@@ -81,8 +81,4 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         builder.build().load(url).into(imageView);
     }
 
-    public void setImageView(int id, Drawable drawable) {
-        ImageView imageView = get(id);
-        imageView.setImageDrawable(drawable);
-    }
 }
