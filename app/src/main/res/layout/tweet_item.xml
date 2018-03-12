@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/iv_tweet_sender_avatar"
         app:layout_constraintTop_toTopOf="@+id/iv_tweet_sender_avatar"
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_tweet_sender_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_tweet_sender_name"
@@ -56,6 +58,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_tweet_comment_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

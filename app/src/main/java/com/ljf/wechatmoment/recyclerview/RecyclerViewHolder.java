@@ -28,6 +28,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ljf.wechatmoment.R;
 import com.squareup.picasso.Picasso;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
@@ -75,7 +76,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void setImageView(int id, String url) {
         ImageView imageView = get(id);
-        Picasso.get().load(url).into(imageView);
+        Picasso.get().load(url).placeholder(R.mipmap.aa).into(imageView);
     }
 
 }
