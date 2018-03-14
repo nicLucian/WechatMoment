@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tweet_sender_name"
         tools:text="textView"/>
 
-    <LinearLayout
+    <com.ljf.wechatmoment.ui.ImageContainer
         android:id="@+id/ll_tweet_images_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         app:layout_constraintLeft_toRightOf="@+id/iv_tweet_sender_avatar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tweet_content">
-    </LinearLayout>
+    </com.ljf.wechatmoment.ui.ImageContainer>
 
     <LinearLayout
         android:id="@+id/ll_tweet_comment_container"
