@@ -20,13 +20,7 @@ public abstract class BaseViewProvider<T> {
 
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent) {
         View view = mInflater.inflate(mLayoutId, parent, false);
-        RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
-        onViewHolderIsCreated(viewHolder);
-        return viewHolder;
-    }
-
-    public void onViewHolderIsCreated(RecyclerViewHolder holder) {
-
+        return new RecyclerViewHolder(view);
     }
 
     public abstract void onBindView(RecyclerViewHolder holder, T bean);

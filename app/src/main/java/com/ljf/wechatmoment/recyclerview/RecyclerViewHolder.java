@@ -41,10 +41,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         mRootView = itemView;
     }
 
-    public View getRootView() {
-        return mRootView;
-    }
-
     @SuppressWarnings("unchecked")
     private <T extends View> T bindView(int id) {
         T view = (T) mViews.get(id);
@@ -58,15 +54,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     @SuppressWarnings("unchecked")
     public <T extends View> T get(int id) {
         return (T) bindView(id);
-    }
-
-    public void setOnClickListener(View.OnClickListener l, int... ids) {
-        if (ids == null) {
-            return;
-        }
-        for (int id : ids) {
-            get(id).setOnClickListener(l);
-        }
     }
 
     public void setText(int id, String text) {

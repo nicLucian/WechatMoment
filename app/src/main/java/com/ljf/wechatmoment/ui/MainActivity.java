@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 mCurrentPage = 1;
                 mNeedClear = true;
                 mCanLoadMore = true;
-                mRepository.getTweets(mCurrentPage);
+                mRepository.getTweets(mCurrentPage++);
             }
         });
     }

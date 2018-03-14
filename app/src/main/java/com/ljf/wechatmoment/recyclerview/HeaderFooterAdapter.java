@@ -69,11 +69,11 @@ public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         provider.onBindView(holder, item);
     }
 
-    public BaseViewProvider getProviderByIndex(int index) {
+    private BaseViewProvider getProviderByIndex(int index) {
         return mTypePool.getProviderByIndex(index);
     }
 
-    public <T extends BaseViewProvider> T getProviderByClass(@NonNull Class<?> clazz) {
+    private <T extends BaseViewProvider> T getProviderByClass(Class<?> clazz) {
         return mTypePool.getProviderByClass(clazz);
     }
 
